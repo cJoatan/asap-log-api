@@ -23,6 +23,7 @@ gradle bootRun
 HTTP/1.1 200 OK
 Status: 200 OK
 Content-Type: application/json
+```json
 {
     size: 10,
     number: 0,
@@ -46,23 +47,25 @@ Content-Type: application/json
         }
     ]
 }
-
+```
 
 ## Criar Cliente com parâmetros válidos
 
 ### Requisição
 `POST api/clients`
+```json
 {
 name: "Cicero",
 cpf: "03957835348",
 city: "Fortaleza",
 uf: "CE"
 }
-
+```
 ### Resposta
 HTTP/1.1 201 CREATED
 Status: 201 CREATED
 Content-Type: application/json
+```json
 {
 id: "600c6c9db16df808354b113f",
 name: "Cicero",
@@ -70,19 +73,21 @@ cpf: "03957835348",
 city: "Fortaleza",
 uf: "CE"
 }
-
+```
 ## Criar Cliente com parametros inválidos
 
 ### Requisição
 `POST api/clients`
+```json
 {
 name: "Cicero",
 cpf: "03957835348",
 city: "Fortaleza",
 uf: "CE"
 }
-
+```
 ### Resposta
+```json
 [
     {
         "codes": [
@@ -125,6 +130,7 @@ uf: "CE"
         "objectName": "client"
     }
 ]
+```
 ## Requisitar um Cliente existente
 
 ### Requisição
@@ -134,6 +140,7 @@ uf: "CE"
 HTTP/1.1 200 OK
 Status: 200 OK
 Content-Type: application/json
+```json
 {
 id: "600c6c9db16df808354b113f",
 name: "Cicero",
@@ -141,7 +148,7 @@ cpf: "03957835348",
 city: "Fortaleza",
 uf: "CE"
 }
-
+```
 ## Requisitar um Cliente Não existente
 
 ### Requisição
@@ -158,18 +165,19 @@ Content-Type: application/json
 
 ### Requisição
 `PUT api/clients/1`
-
+```json
 {
 name: "Cicero",
 cpf: "03957835348",
 city: "Fortaleza",
 uf: "CE"
 }
-
+```
 ### Resposta
 HTTP/1.1 200 OK
 Status: 200 OK
 Content-Type: application/json
+```json
 {
 id: "600c6c9db16df808354b113f",
 name: "Cicero",
@@ -177,7 +185,7 @@ cpf: "03957835348",
 city: "Fortaleza",
 uf: "CE"
 }
-
+```
 ## Atualizar um Cliente não existente
 
 ### Requisição
@@ -198,6 +206,7 @@ Content-Type: application/json
 HTTP/1.1 422 UNPROCESABLE ENTITY
 Status: 422 UNPROCESABLE ENTITY
 Content-Type: application/json
+```json
 [
     {
         "codes": [
@@ -240,7 +249,7 @@ Content-Type: application/json
         "objectName": "client"
     }
 ]
-
+```
 
 ## Deletar um existente
 ### Requisição
@@ -269,7 +278,7 @@ Content-Type: application/json
 `GET api/policies/`
 
 ### Resposta
-
+```json
 {
 size: 20,
 number: 0,
@@ -297,12 +306,13 @@ expired: true
 }
 ]
 }
-
+```
 
 ## Criar Apólice com parâmetros válidos
 
 ### Requisição
 `POST api/policies`
+```json
 {
     "effectiveDateStartAt": "2020-02-01T00:00:00",
     "effectiveDateEndAt": "2020-02-25T23:59:59",
@@ -311,6 +321,7 @@ expired: true
         "id": "600c6c9db16df808354b113f"
     }
 }
+```
 ### Resposta
 HTTP/1.1 201 CREATED
 Status: 201 CREATED
@@ -326,6 +337,7 @@ Content-Type: application/json
 HTTP/1.1 422 UNPROCESSABLE ENTITY
 Status: 422 UNPROCESSABLE ENTITY
 Content-Type: application/json
+```json
 [
     {
         "codes": [
@@ -368,7 +380,7 @@ Content-Type: application/json
         "objectName": "policy"
     }
 ]
-
+```
 ## Requisitar uma Apólice existente
 
 ### Requisição
@@ -378,6 +390,7 @@ Content-Type: application/json
 HTTP/1.1 200 OK
 Status: 200 OK
 Content-Type: application/json
+```json
 {
     "id": "600e0668f09f2a7d4d5c7305",
     "number": 76079,
@@ -389,7 +402,7 @@ Content-Type: application/json
     "daysExpired": 333,
     "expired": true
 }
-
+```
 ## Requisitar um Apólice Não existente
 
 ### Requisição
@@ -404,6 +417,7 @@ Content-Type: application/json
 HTTP/1.1 200 OK
 Status: 200 OK
 Content-Type: application/json
+```json
 {
     "id": "600e0668f09f2a7d4d5c7305",
     "number": 76079,
@@ -415,7 +429,7 @@ Content-Type: application/json
     "daysExpired": 333,
     "expired": true
 } 
-
+```
 ## Requisitar uma Apólice por número Não existente
 
 ### Requisição
@@ -436,6 +450,7 @@ Content-Type: application/json
 HTTP/1.1 200 OK
 Status: 200 OK
 Content-Type: application/json
+```json
 {
     "id": "600e0668f09f2a7d4d5c7305",
     "number": 76079,
@@ -447,7 +462,7 @@ Content-Type: application/json
     "daysExpired": 333,
     "expired": true
 } 
-
+```
 ## Atualizar um Cliente com parâmetros inválidos
 
 ### Requisição
@@ -458,6 +473,7 @@ Content-Type: application/json
 HTTP/1.1 422 UNPROCESSABLE ENTITY
 Status: 422 UNPROCESSABLE ENTITY
 Content-Type: application/json
+```json
 [
     {
         "codes": [
@@ -500,7 +516,7 @@ Content-Type: application/json
         "objectName": "policy"
     }
 ]
-
+```
 
 ## Deletar uma apólice existente
 ### Requisição
